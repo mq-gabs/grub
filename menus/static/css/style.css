@@ -1,0 +1,45 @@
+:root {
+  --c-prim: #00b;
+  --c-sec: #0b0;
+  --c-dark: #111;
+  --c-light: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.c-prim {
+  color: var(--c-prim);
+}
+
+.c-sec {
+  color: var(--c-sec);
+}
+
+.c-dark {
+  color: var(--c-dark);
+}
+
+.c-light {
+  color: var(--c-light);
+}
+
+.bg-prim {
+  background-color: var(--c-prim);
+}
+
+.bg-sec {
+  background-color: var(--c-sec);
+}
+
+.bg-dark {
+  background-color: var(--c-dark);
+}
+
+.bg-light {
+  background-color: var(--c-light);
+}

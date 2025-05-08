@@ -1,0 +1,20 @@
+<form method="post" class="mb-2" id="menuItemForm">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name2" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="name2" name="name" placeholder="Nome do item" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Descrição</label>
+    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Descrição do item" required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Preço</label>
+    <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="9.99" required>
+  </div>
+
+  <button type="submit" class="btn btn-success">Salvar</button>
+  <button type="reset" class="btn btn-secondary">Limpar</button>
+</form>

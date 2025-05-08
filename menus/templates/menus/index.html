@@ -1,0 +1,56 @@
+{% extends 'menus/base.html' %}
+
+{% block content %}
+<body class="d-flex flex-column min-vh-100">
+
+  <header class="bg-light shadow-sm py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <h4 class="mb-0 c-prim">Grub</h4>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow-1 py-5">
+    <div class="container">
+      <h1 class="mb-4 c-sec">Welcome to Grub – Your Digital Menu Solution</h1>
+      <p class="lead">
+        MyMenu is an innovative online menu service that helps restaurants, cafés, and food trucks create and share their menus digitally.
+        Whether you're looking to go paperless or just want to make menu updates easier and faster, we’ve got you covered.
+      </p>
+      <p>
+        With Grub, you can easily:
+        <ul>
+          <li>Create and update your menu items anytime</li>
+          <li>Organize items into categories like appetizers, main courses, desserts, and drinks</li>
+          <li>Display your menu beautifully on any device</li>
+          <li>Share your menu via QR codes or direct links</li>
+        </ul>
+      </p>
+      <p>
+        Join hundreds of restaurants that are modernizing their menu experience. Get started today!
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <small>&copy; 2025 Grub. All rights reserved.</small>
+    </div>
+  </footer>
+
+</body>
+{% endblock %}

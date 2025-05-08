@@ -1,0 +1,8 @@
+<form method="post" class="mb-5">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="name1" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="name1" name="name" placeholder="Nome da seção" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

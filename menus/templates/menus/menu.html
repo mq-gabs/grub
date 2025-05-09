@@ -13,8 +13,9 @@
       </h3>
       {% if is_admin %}
         <div>
-          <button class="btn btn-secondary">Editar</button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editTitleModal">Editar</button>
         </div>
+        {% include 'menus/modals/modal-edit-section.html' %}
       {% endif %}
     </div>
     <div class="row row-cols-1 row-cols-md-2 g-2 mb-2">

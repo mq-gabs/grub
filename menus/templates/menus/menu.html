@@ -13,7 +13,7 @@
       </h3>
       {% if is_admin %}
         <div>
-          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editTitleModal">Editar</button>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editSection">Editar</button>
         </div>
         {% include 'menus/modals/modal-edit-section.html' %}
       {% endif %}
@@ -48,11 +48,13 @@
       {% endfor %}
     </div>
     {% if is_admin %}
-      {% include 'menus/form-item.html' %}
+      <!--{% include 'menus/form-item.html' %}-->
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editItem">Edit item</button>
+      {% include 'menus/modals/modal-edit-item.html' %}
     {% endif %}
   </section>
-  {% if is_admin %}
-    {% include 'menus/form-section.html' %}
-  {% endif %}
+  <!--{% if is_admin %}-->
+  <!--  {% include 'menus/form-section.html' %}-->
+  <!--{% endif %}-->
 </div>
 {% endblock %}

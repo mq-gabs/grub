@@ -1,23 +1,24 @@
 {% extends 'menus/modals/modal-base.html' %}
 
-{% block modal_id %}editTitleModal{% endblock %}
+{% block modal_id %}editSection{% endblock %}
 
-{% block modal_label %}editTitleModalLabel{% endblock %}
+{% block modal_label %}editSectionLabel{% endblock %}
 
 {% block modal_content %}
   <form class="modal-content" onsubmit="updateTitle(event)">
       <div class="modal-header">
-        <h5 class="modal-title" id="editTitleModalLabel">Edit Title</h5>
+        <h5 class="modal-title" id="editTitleModalLabel">Editar Seção</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
       <div class="modal-body">
-        <input type="text" id="titleInput" class="form-control" value="My Menu Title" />
+        <label for="titleInput" class="form-label">Nome</label>
+        <input type="text" id="titleInput" class="form-control" placeholder="Nome" />
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
       </div>
     </form>
 {% endblock %}

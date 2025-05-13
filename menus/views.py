@@ -1,34 +1,80 @@
 from django.shortcuts import render
+from users.models import User
 
 data = {
-        "items": [
-            {
-                "name": "Hamburger Cheddar",
-                "price": 33.80,
-                "description": "Hamruger com chaddar cremoso",
-            },
-            {
-                "name": "Hamburger Cheddar",
-                "price": 33.80,
-                "description": "Hamruger com chaddar cremoso",
-            },
-            {
-                "name": "Hamburger Cheddar",
-                "price": 33.80,
-                "description": "Hamruger com chaddar cremoso",
-            },
-            {
-                "name": "Hamburger Cheddar",
-                "price": 33.80,
-                "description": "Hamruger com chaddar cremoso",
-            },
-        ],
-        "is_admin": True,
-    }
+    "is_admin": True,
+    "sections": [
+        {
+            "name": "Entradas",
+            "items": [
+                {
+                    "name": "Hamburger Cheddar",
+                    "price": 33.80,
+                    "description": "Hamruger com chaddar cremoso",
+                },
+                {
+                    "name": "Hamburger Cheddar",
+                    "price": 33.80,
+                    "description": "Hamruger com chaddar cremoso",
+                },
+                {
+                    "name": "Hamburger Cheddar",
+                    "price": 33.80,
+                    "description": "Hamruger com chaddar cremoso",
+                },
+                {
+                    "name": "Hamburger Cheddar",
+                    "price": 33.80,
+                    "description": "Hamruger com chaddar cremoso",
+                },
+            ]
+        },
+        {
+            "name": "Pricipais",
+            "items": [
+                {
+                    "name": "Filé ao molho madeira",
+                    "price": 80.00,
+                    "description": "Filé ao molho madeira acompanhado de arroz temperado e purê de batatas",
+                },
+                {
+                    "name": "Filé ao molho madeira",
+                    "price": 80.00,
+                    "description": "Filé ao molho madeira acompanhado de arroz temperado e purê de batatas",
+                },
+                {
+                    "name": "Filé ao molho madeira",
+                    "price": 80.00,
+                    "description": "Filé ao molho madeira acompanhado de arroz temperado e purê de batatas",
+                },
+            ]
+        },
+        {
+            "name": "Sobremesas",
+            "items": [
+                {
+                    "name": "Petit Gateau",
+                    "price": 45.00,
+                    "description": "Petit Gateau de chocolate acompanhado de sorvete de creme",
+                },
+                {
+                    "name": "Petit Gateau",
+                    "price": 45.00,
+                    "description": "Petit Gateau de chocolate acompanhado de sorvete de creme",
+                },
+            ]
+        }
+    ],
+
+}
 
 
 def index(request):
     return render(request, "menus/index.html",)
 
-def menus(request):
+def menus(request, id: str):
+    user = User.objects.get(pk=id)
+    data.update({
+        "user": user.to_json()
+    })
     return render(request, "menus/menu.html", data)

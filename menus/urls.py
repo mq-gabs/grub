@@ -5,5 +5,5 @@ from menus import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("place", views.menus, name="menus"),
+    path("<str:id>", views.menus, name="menus"),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from users.models import User
+from sections.models import Section, Item
 
 data = {
     "is_admin": True,
@@ -74,7 +75,21 @@ def index(request):
 
 def menus(request, id: str):
     user = User.objects.get(pk=id)
+    sections = Section.objects.filter(user_id=id)
+    dict_sections = []
+    for section in sections:
+        items = []
+        for item in section.items.all():
+            items.append(item)
+        dict_sections.append({
+            "name": section.name,
+            "items": items
+        })
+
+    print(dict_sections)
+
     data.update({
-        "user": user.to_json()
+        "user": user.to_json(),
+        "sections": dict_sections
     })
     return render(request, "menus/menu.html", data)

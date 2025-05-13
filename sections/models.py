@@ -1,3 +1,4 @@
+from typing import override
 from django.db import models
 from base.models import BaseModel
 from users.models import User
@@ -20,3 +21,7 @@ class Item(BaseModel):
 
     def __str__(self):
         return f"Name: {self.name}, Description: {self.description}, Price: {self.price}, Active: {self.active}"
+
+    # @override
+    # def to_json(self):
+    #     data = super().to_json()
